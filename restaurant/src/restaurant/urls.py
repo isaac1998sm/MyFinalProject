@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.contrib import admin
 
+from products.views import product_list_view, product_detail_view
 
 from .views import home_page, about_page, contact_page, login_page, register_page
 
@@ -28,6 +29,8 @@ urlpatterns = [
     url(r'^contact/$', contact_page),
     url(r'^login/$', login_page),
     url(r'^register/$', register_page),
+    url(r'^products/$', product_list_view),
+    url(r'^products/(?P<pk>\d+)/$', product_detail_view),
     url(r'^admin/', admin.site.urls),
 ]
 

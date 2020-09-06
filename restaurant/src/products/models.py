@@ -73,13 +73,17 @@ class Product(models.Model):
     objects = ProductManager()
 
     def get_absolute_url(self):
-        # return "/products/{slug}/".format(slug=self.slug)
+        #return "/products/{slug}/".format(slug=self.slug)
         return reverse("products:detail", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title
 
     def __unicode__(self):
+        return self.title
+
+    @property
+    def name(self):
         return self.title
 
 

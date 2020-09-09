@@ -2,6 +2,7 @@
 {% url 'contact' as contact_url %}
 {% url 'products:list' as product_list_url %}
 {% url 'login' as login_url %}
+{% url 'logout' as logout_url %}
 {% url 'register' as register_url %}
 {% url 'cart:home' as cart_url %}
 
@@ -9,7 +10,7 @@
    <div class='container'>
   <a class="navbar-brand" href="{{ home_url }}">
     <!--<img src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">-->
-    {% if brand_name %} {{brand_name }} {% else %}CFE khoshkhor {% endif %}
+    {% if brand_name %} {{brand_name }} {% else %}CFE eCommerce {% endif %}
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,8 +30,8 @@
 
 
       {% if request.user.is_authenticated %}
-       <li class="nav-item {% if request.path == login_url %}active{% endif %}">
-        <a class="nav-link" href="{{ login_url }}">Logout</a>
+       <li class="nav-item {% if request.path == logout_url %}active{% endif %}">
+        <a class="nav-link" href="{{ logout_url }}">Logout</a>
       </li>
       {% else %}
        <li class="nav-item {% if request.path == register_url %}active{% endif %}">

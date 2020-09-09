@@ -40,6 +40,10 @@ INSTALLED_APPS = [
 
     # my app
     'products',
+    'accounts',
+    'billing',
+    'addresses',
+    'orders',
     'search',
     'tags',
     'carts',
@@ -55,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGOUT_REDIRECT_URL = '/login/'
 ROOT_URLCONF = 'restaurant.urls'
 
 TEMPLATES = [

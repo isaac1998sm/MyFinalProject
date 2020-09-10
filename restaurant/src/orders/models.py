@@ -64,7 +64,7 @@ class Order(models.Model):
         shipping_address = self.shipping_address
         billing_address = self.billing_address
         total   = self.total
-        if billing_profile and shipping_address and billing_address and total > 0:
+        if billing_profile and shipping_address and total > 0:
             return True
         return False
 

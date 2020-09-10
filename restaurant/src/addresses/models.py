@@ -14,7 +14,7 @@ class Address(models.Model):
     address_line_1  = models.CharField(max_length=120)
     address_line_2  = models.CharField(max_length=120, null=True, blank=True)
     city            = models.CharField(max_length=120)
-    country         = models.CharField(max_length=120, default='iran')
+    country         = models.CharField(max_length=120, default='ایران')
     state           = models.CharField(max_length=120)
     postal_code     = models.CharField(max_length=120)
 
@@ -22,7 +22,7 @@ class Address(models.Model):
         return str(self.billing_profile)
 
     def get_address(self):
-        return "{line1}\n{line2}\n{city}\n{state}, {postal}\n{country}".format(
+        return "{country}\n{city}\n{line1}\n{line2}\n{state}\n{postal}".format(
                 line1 = self.address_line_1,
                 line2 = self.address_line_2 or "",
                 city = self.city,

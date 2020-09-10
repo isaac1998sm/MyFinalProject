@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class GuestEmail(models.Model):
     email       = models.EmailField()
     active      = models.BooleanField(default=True)

@@ -13,7 +13,6 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
 
-
 class RegisterForm(forms.Form):
     username = forms.CharField()
     email    = forms.EmailField()
